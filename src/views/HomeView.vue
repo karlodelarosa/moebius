@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import { PostgrestResponse } from '@supabase/supabase-js'
 import Db from '@/core/infrastructure/db/Db';
 
@@ -17,14 +18,16 @@ const testFetch = async () => {
   return data
 }
 
+const finalData = ref([])
+
 testFetch().then((data) => {
-  console.info(data)
+  finalData.value = data
 })
+
+
 
 </script>
 
 <template>
-  <main>
-    test
-  </main>
+  
 </template>

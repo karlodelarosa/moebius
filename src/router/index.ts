@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import TimeTrackerDashboard from '../views/TimeTrackerDashboard.vue'
+import UserManagement from '../views/UserManagement.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -14,7 +15,12 @@ const router = createRouter({
       path: '/time-tracker',
       name: 'time_tracker',
       component: TimeTrackerDashboard
-    }
+    },
+    {
+      path: '/user-management',
+      name: 'user_management',
+      component: UserManagement
+    },
   ]
 })
 
