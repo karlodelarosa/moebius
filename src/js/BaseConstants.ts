@@ -1,18 +1,18 @@
 export const SIDEBAR_ITEMS = [
   {
-    name: "Dashboard",
-    redirection: "/",
+    name: 'Dashboard',
+    redirection: '/'
   },
   {
-    name: "Projects",
-    redirection: "/projects",
+    name: 'Projects',
+    redirection: '/projects'
   },
   {
-    name: "Logging",
-    redirection: "/logging",
+    name: 'Logging',
+    redirection: '/logging'
   },
   {
-    name: "Reports",
-    redirection: "/reports",
-  },
-];
+    name: 'Reports',
+    redirection: '/reports'
+  }
+]

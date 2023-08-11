@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { defineProps, toRefs } from "vue";
+import { defineProps, toRefs } from 'vue'
 
 const props = defineProps({
   brandName: {
     type: String,
-    default: "BRAND NAMEX",
-  },
-});
+    default: 'BRAND NAMEX'
+  }
+})
 
-const { brandName } = toRefs(props);
+const { brandName } = toRefs(props)
 </script>
 
 <template>

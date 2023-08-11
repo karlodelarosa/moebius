@@ -1,27 +1,23 @@
 <script setup lang="ts">
-import { ref, watch } from "vue";
-import EditIcon from "@/components/icons/EditIcon.vue";
-import DeleteIcon from "@/components/icons/DeleteIcon.vue";
+import { ref, watch } from 'vue'
+import EditIcon from '@/components/icons/EditIcon.vue'
+import DeleteIcon from '@/components/icons/DeleteIcon.vue'
 
-const emailInput = ref("");
-const isHiddenCancelButton = ref(true);
+const emailInput = ref('')
+const isHiddenCancelButton = ref(true)
 
 watch(emailInput, (newValue) => {
-  isHiddenCancelButton.value = newValue.length === 0;
-});
+  isHiddenCancelButton.value = newValue.length === 0
+})
 </script>
 <template>
   <div class="grid grid-cols-12 gap-3">
     <div class="col-span-4">
       <div class="bg-white dark:bg-gray-800 rounded-lg p-5">
-        <div class="font-bold text-sm tracking-wide mb-6 text-teal-600">
-          ADD USERS
-        </div>
+        <div class="font-bold text-sm tracking-wide mb-6 text-teal-600">ADD USERS</div>
         <form>
           <div class="mb-6">
-            <label
-              for="email"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >Email</label
             >
             <input
@@ -60,9 +56,7 @@ watch(emailInput, (newValue) => {
 
     <div class="col-span-8">
       <div class="relative overflow-x-auto shadow-md sm:rounded-lg mb-3">
-        <table
-          class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
-        >
+        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
           <thead
             class="text-xs text-gray-700 uppercase bg-gray-200 dark:bg-gray-900 dark:text-gray-400"
           >
@@ -92,16 +86,10 @@ watch(emailInput, (newValue) => {
               </td>
               <td class="px-6 py-4">
                 <div class="flex flex-row gap-1 items-center justify-end">
-                  <a
-                    href="#"
-                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                  >
+                  <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
                     <EditIcon />
                   </a>
-                  <a
-                    href="#"
-                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                  >
+                  <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
                     <DeleteIcon />
                   </a>
                 </div>
@@ -123,16 +111,10 @@ watch(emailInput, (newValue) => {
               </td>
               <td class="px-6 py-4">
                 <div class="flex flex-row gap-1 items-center justify-end">
-                  <a
-                    href="#"
-                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                  >
+                  <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
                     <EditIcon />
                   </a>
-                  <a
-                    href="#"
-                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                  >
+                  <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
                     <DeleteIcon />
                   </a>
                 </div>
@@ -154,16 +136,10 @@ watch(emailInput, (newValue) => {
               </td>
               <td class="px-6 py-4">
                 <div class="flex flex-row gap-1 items-center justify-end">
-                  <a
-                    href="#"
-                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                  >
+                  <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
                     <EditIcon />
                   </a>
-                  <a
-                    href="#"
-                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                  >
+                  <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
                     <DeleteIcon />
                   </a>
                 </div>

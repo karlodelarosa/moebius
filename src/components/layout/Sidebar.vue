@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import { SIDEBAR_ITEMS } from "@/js/BaseConstants";
-import { useRouter, useRoute } from "vue-router";
-import Brand from "@/components/layout/atoms/Brand.vue";
+import { SIDEBAR_ITEMS } from '@/js/BaseConstants'
+import { useRouter, useRoute } from 'vue-router'
+import Brand from '@/components/layout/atoms/Brand.vue'
 
-const router = useRouter();
+const router = useRouter()
 
 const redirect = (url) => {
-  router.push(url);
-};
+  router.push(url)
+}
 </script>
 
 <template>

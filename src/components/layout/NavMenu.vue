@@ -1,13 +1,11 @@
 <script setup lang="ts">
-import { useDark, useToggle } from "@vueuse/core";
-const isDark = useDark();
-const toggleDark = useToggle(isDark);
+import { useDark, useToggle } from '@vueuse/core'
+const isDark = useDark()
+const toggleDark = useToggle(isDark)
 </script>
 
 <template>
-  <nav
-    class="bg-white dark:bg-gray-900 dark:border-none border border-gray-300"
-  >
+  <nav class="bg-white dark:bg-gray-900 dark:border-none border border-gray-300">
     <div class="w-full flex flex-wrap items-center justify-end mx-auto p-4">
       <div class="hidden w-full md:block md:w-auto" id="navbar-default">
         <ul

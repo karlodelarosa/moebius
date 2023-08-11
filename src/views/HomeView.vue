@@ -1,26 +1,26 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import { PostgrestResponse } from "@supabase/supabase-js";
-import Db from "@/core/infrastructure/db/Db";
+import { ref } from 'vue'
+import { PostgrestResponse } from '@supabase/supabase-js'
+import Db from '@/core/infrastructure/db/Db'
 
-const testDb = new Db();
+const testDb = new Db()
 
 const testFetch = async () => {
-  const { data, error }: any = await testDb.db().from("company").select();
+  const { data, error }: any = await testDb.db().from('company').select()
 
   if (error) {
-    console.info(error.message);
-    return;
+    console.info(error.message)
+    return
   }
 
-  return data;
-};
+  return data
+}
 
-const finalData = ref([]);
+const finalData = ref([])
 
 testFetch().then((data) => {
-  finalData.value = data;
-});
+  finalData.value = data
+})
 </script>
 
 <template></template>
