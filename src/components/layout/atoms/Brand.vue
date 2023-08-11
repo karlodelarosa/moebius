@@ -19,6 +19,6 @@ const { brandName } = toRefs(props);
 
 <style scoped>
 .brand {
-  @apply rounded py-2 tracking-[5px] text-center text-lg font-bold mb-3;
+  @apply rounded py-2 tracking-[5px] text-center text-lg font-bold mb-3 dark:text-white;
 }
 </style>

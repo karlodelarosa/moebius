@@ -15,8 +15,4 @@ export const SIDEBAR_ITEMS = [
     name: "Reports",
     redirection: "/reports",
   },
-  {
-    name: "Users",
-    redirection: "/user-management",
-  },
 ];

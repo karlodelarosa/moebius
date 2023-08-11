@@ -1,11 +1,19 @@
 <script setup lang="ts">
+import { ref, watch } from "vue";
 import EditIcon from "@/components/icons/EditIcon.vue";
 import DeleteIcon from "@/components/icons/DeleteIcon.vue";
+
+const emailInput = ref("");
+const isHiddenCancelButton = ref(true);
+
+watch(emailInput, (newValue) => {
+  isHiddenCancelButton.value = newValue.length === 0;
+});
 </script>
 <template>
   <div class="grid grid-cols-12 gap-3">
     <div class="col-span-4">
-      <div class="bg-white rounded-lg p-5">
+      <div class="bg-white dark:bg-gray-800 rounded-lg p-5">
         <div class="font-bold text-sm tracking-wide mb-6 text-teal-600">
           ADD USERS
         </div>
@@ -19,6 +27,7 @@ import DeleteIcon from "@/components/icons/DeleteIcon.vue";
             <input
               type="email"
               id="email"
+              v-model="emailInput"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="name@flowbite.com"
               required
@@ -26,19 +35,24 @@ import DeleteIcon from "@/components/icons/DeleteIcon.vue";
           </div>
 
           <div class="w-full flex justify-between">
-            <!-- If input has value -->
-            <button
-              type="submit"
-              class="text-teal-600 hover:text-white bg-white border border-teal-600 hover:bg-teal-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            >
-              Cancel
-            </button>
             <button
               type="submit"
               class="text-white bg-teal-600 hover:bg-teal-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
               Submit
             </button>
+            <Transition
+              enter-active-class="animate__animated animate__fadeIn"
+              leave-active-class="animate__animated animate_fadeOut"
+            >
+              <button
+                v-if="!isHiddenCancelButton"
+                type="submit"
+                class="text-teal-600 hover:text-white bg-white border border-teal-600 hover:bg-teal-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              >
+                Cancel
+              </button>
+            </Transition>
           </div>
         </form>
       </div>
@@ -50,7 +64,7 @@ import DeleteIcon from "@/components/icons/DeleteIcon.vue";
           class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
         >
           <thead
-            class="text-xs text-gray-700 uppercase bg-gray-200 dark:bg-gray-700 dark:text-gray-400"
+            class="text-xs text-gray-700 uppercase bg-gray-200 dark:bg-gray-900 dark:text-gray-400"
           >
             <tr>
               <th scope="col" class="px-6 py-3">Email</th>

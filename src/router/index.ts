@@ -3,6 +3,7 @@ import HomeView from "../views/HomeView.vue";
 import TimeTrackerDashboard from "../views/TimeTrackerDashboard.vue";
 import UserManagement from "../views/UserManagement.vue";
 import OrganizationSetup from "../views/OrganizationSetup.vue";
+import SignUp from "../views/SignUp.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -30,6 +31,12 @@ const router = createRouter({
       name: "organization_setup",
       component: OrganizationSetup,
       meta: { layout: false },
+    },
+    {
+      path: "/sign-up",
+      name: "sign_up",
+      component: SignUp,
+      meta: { layout: false, title: "Sign Up" },
     },
   ],
 });
