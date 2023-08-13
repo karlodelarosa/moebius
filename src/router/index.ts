@@ -4,6 +4,7 @@ import TimeTrackerDashboard from '../views/TimeTrackerDashboard.vue'
 import UserManagement from '../views/UserManagement.vue'
 import OrganizationSetup from '../views/OrganizationSetup.vue'
 import SignUp from '../views/SignUp.vue'
+import SignIn from '../views/SignIn.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -37,6 +38,12 @@ const router = createRouter({
       name: 'sign_up',
       component: SignUp,
       meta: { layout: false, title: 'Sign Up' }
+    },
+    {
+      path: '/sign-in',
+      name: 'sign_in',
+      component: SignIn,
+      meta: { layout: false, title: 'Sign In' }
     }
   ]
 })

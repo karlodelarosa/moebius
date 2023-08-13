@@ -1,12 +1,18 @@
 <script setup lang="ts">
+import { useRouter } from 'vue-router'
 import { useSignupStepsStore } from '@/stores/signup/steps'
 import InputField from '@/components/inputs/InputField.vue'
 import DropdownField from '@/components/inputs/DropdownField.vue'
 import PrimaryButton from '@/components/buttons/PrimaryButton.vue'
 import EditIcon from '@/components/icons/EditIcon.vue'
-// import DefaultButton from '@/components/buttons/DefaultButton.vue'
 
 const signupStepStore = useSignupStepsStore()
+
+const router = useRouter()
+
+const completeSignUp = () => {
+  router.push('/')
+}
 </script>
 <template>
   <div class="w-2/3">
@@ -305,7 +311,7 @@ const signupStepStore = useSignupStepsStore()
       </div>
 
       <div class="w-full">
-        <PrimaryButton size="lg" @click="signupStepStore.next()" text="Finish setup" />
+        <PrimaryButton size="lg" @click="completeSignUp()" text="Finish setup" />
       </div>
     </div>
 
