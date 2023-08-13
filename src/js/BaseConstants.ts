@@ -16,3 +16,22 @@ export const SIDEBAR_ITEMS = [
     redirection: '/reports'
   }
 ]
+
+export const SIGN_UP_STEPS = [
+  {
+    title: 'Organization',
+    description: 'Enter your company details'
+  },
+  {
+    title: 'Personal Info',
+    description: 'Test desc 2'
+  },
+  {
+    title: 'Review',
+    description: 'Test desc 3'
+  },
+  {
+    title: 'Confimation',
+    description: 'Test desc 4'
+  }
+]
