@@ -20,11 +20,7 @@ const props = defineProps({
   dataItems: {
     type: Array,
     required: true,
-    default: () => [
-      'Item 1',
-      'Item 2',
-      'Item 3',
-    ]
+    default: () => ['Item 1', 'Item 2', 'Item 3']
   }
 })
 

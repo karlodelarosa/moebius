@@ -10,7 +10,7 @@ const props = defineProps({
   size: {
     type: String,
     required: false,
-    default:'sm'
+    default: 'sm'
   }
 })
 
@@ -18,8 +18,8 @@ const { size } = toRefs(props)
 const buttonSize = ref('w-fit')
 
 switch (size.value) {
-  case'sm':
-  buttonSize.value = 'w-fit'
+  case 'sm':
+    buttonSize.value = 'w-fit'
     break
   case 'lg':
     buttonSize.value = 'w-full'

@@ -15,7 +15,7 @@ const stepIcons = reactive([
   { component: () => UserIcon },
   { component: () => PersonalInfo },
   { component: () => ReviewIcon },
-  { component: () => ConfirmationIcon },
+  { component: () => ConfirmationIcon }
 ])
 
 const signupStepStore = useSignupStepsStore()
@@ -49,7 +49,7 @@ const stepItems = ref([
         class="absolute flex items-center justify-center w-8 h-8 border border-gray-300 bg-gray-50 rounded-full -left-4 ring-4 ring-white dark:ring-gray-900 dark:bg-green-900"
         :class="[
           { 'bg-gray-300': signupStepStore.GET_step === index },
-          { 'bg-green-200 border-none' : signupStepStore.GET_step > index}
+          { 'bg-green-200 border-none': signupStepStore.GET_step > index }
         ]"
       >
         <template v-if="signupStepStore.GET_step > index">
@@ -59,7 +59,6 @@ const stepItems = ref([
         <template v-else>
           <Component :is="stepIcons[index].component()" />
         </template>
-        
       </span>
       <h3 class="font-medium leading-tight">{{ step.title }}</h3>
       <p class="text-sm">{{ step.description }}</p>
