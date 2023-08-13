@@ -1,18 +1,27 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useSignupStepsStore } from '@/stores/signup/steps'
 import InputField from '@/components/inputs/InputField.vue'
 import DropdownField from '@/components/inputs/DropdownField.vue'
 import PrimaryButton from '@/components/buttons/PrimaryButton.vue'
 import EditIcon from '@/components/icons/EditIcon.vue'
+import SignInLoadingScreen from '@/components/overlay/SignInLoadingScreen.vue'
 
 const signupStepStore = useSignupStepsStore()
 
 const router = useRouter()
+const loading = ref(false)
 
 const completeSignUp = () => {
-  router.push('/')
+  loading.value = true
+  setTimeout(() => {
+    loading.value = false
+    router.push('/')
+  }, 3000)
+  
 }
+
 </script>
 <template>
   <div class="w-2/3">
@@ -319,4 +328,8 @@ const completeSignUp = () => {
       <PrimaryButton @click="signupStepStore.next()" size="lg" text="Next" />
     </div>
   </div>
+
+  <Transition appear enter-active-class="animate__animated animate__fadeIn" leave-active-class="animate__animated animate__fadeOut">
+    <SignInLoadingScreen v-if="loading" />
+  </Transition>
 </template>

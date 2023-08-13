@@ -29,11 +29,10 @@ const toggleDark = useToggle(isDark)
           </li>
           <li>
             <a
-              @click="toggleDark()"
-              href="#"
+              href="/sign-up"
               class="block py-2 pl-3 pr-4 rounded md:bg-transparent dark:text-white dark:hover:bg-gray-800"
               aria-current="page"
-              >Toggle</a
+              >Sign up</a
             >
           </li>
         </ul>
