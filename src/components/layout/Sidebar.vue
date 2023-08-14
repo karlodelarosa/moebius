@@ -5,7 +5,7 @@ import Brand from '@/components/layout/atoms/Brand.vue'
 
 const router = useRouter()
 
-const redirect = (url) => {
+const redirect = (url: any) => {
   router.push(url)
 }
 </script>
