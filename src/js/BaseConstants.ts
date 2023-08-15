@@ -12,6 +12,11 @@ export const SIDEBAR_ITEMS = [
   {
     name: 'document',
     title: 'Document',
+    redirection: '/document'
+  },
+  {
+    name: 'loggin',
+    title: 'Logging',
     redirection: '/logging'
   },
   {

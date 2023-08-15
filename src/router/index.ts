@@ -1,13 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import TimeTrackerDashboard from '../views/TimeTrackerDashboard.vue'
-import UserManagement from '../views/UserManagement.vue'
+import UserManagement from '../views/user_management/UserManagement.vue'
 import OrganizationSetup from '../views/OrganizationSetup.vue'
 import SignUp from '../views/SignUp.vue'
 import SignIn from '../views/SignIn.vue'
 import EmployeeList from '../views/employee/EmployeeList.vue'
 import AddEmployee from '../views/employee/AddEmployee.vue'
 import EmployeeDetails from '../views/employee/EmployeeDetails.vue'
+import TimeTracker from '../views/logging/TimeTracker.vue'
+import TimeLogging from '../views/logging/TimeLogging.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -65,6 +67,18 @@ const router = createRouter({
       name: 'employee_details',
       component: EmployeeDetails,
       meta: { layout: true, title: 'Employee Details' }
+    },
+    {
+      path: '/time-tracker',
+      name: 'time_tracker',
+      component: TimeTracker,
+      meta: { layout: true, title: 'Time Tracker' }
+    },
+    {
+      path: '/logging',
+      name: 'logging',
+      component: TimeLogging,
+      meta: { layout: true, title: 'Time Logging' }
     }
   ]
 })

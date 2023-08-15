@@ -30,8 +30,8 @@ import { Input } from 'postcss'
       </div>
 
       <div class="flex flex-row gap-[10px] mb-[15px]">
-        <InputField label="Birthdate" type="date" class="w-1/2"/>
-        <SelectField label="Gender" class="w-1/2"/>
+        <InputField label="Birthdate" type="date" class="w-1/2" />
+        <SelectField label="Gender" class="w-1/2" />
       </div>
 
       <div class="grid grid-col-12 grid-flow-col gap-[10px] mb-[15px]">
@@ -84,12 +84,12 @@ import { Input } from 'postcss'
       <div class="flex flex-col gap-[10px] mb-[15px]">
         <div class="flex flex-col gap-[10px]">
           <div class="flex flex-row gap-[10px]">
-            <InputField label="SSS Number" class="w-1/2"/>
-            <InputField label="TIN" class="w-1/2"/>
+            <InputField label="SSS Number" class="w-1/2" />
+            <InputField label="TIN" class="w-1/2" />
           </div>
           <div class="flex flex-row gap-[10px]">
-            <InputField label="PAG IBIG" class="w-1/2"/>
-            <InputField label="PHILHEALTH" class="w-1/2"/>
+            <InputField label="PAG IBIG" class="w-1/2" />
+            <InputField label="PHILHEALTH" class="w-1/2" />
           </div>
         </div>
         <div>

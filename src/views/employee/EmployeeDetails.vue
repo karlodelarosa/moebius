@@ -1,5 +1,3 @@
 <template>
-  <div>
-    employee details!!
-  </div>
+  <div>employee details!!</div>
 </template>

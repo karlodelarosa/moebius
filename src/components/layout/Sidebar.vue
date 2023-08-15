@@ -28,7 +28,7 @@ const redirect = (url: any) => {
           <a
             href="#"
             class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-teal-400 dark:hover:bg-gray-800 group"
-            :class="{ 'bg-teal-400 hover:bg-teal-500' : path === items.name }"
+            :class="{ 'bg-teal-400 hover:bg-teal-500': path === items.name }"
           >
             <span class="ml-3 text-teal-900">{{ items.title }}</span>
           </a>
