@@ -1,18 +1,22 @@
 export const SIDEBAR_ITEMS = [
   {
-    name: 'Dashboard',
+    name: 'dashboard',
+    title: 'Dashboard',
     redirection: '/'
   },
   {
-    name: 'Employees',
+    name: 'employee',
+    title: 'Employee',
     redirection: '/employee'
   },
   {
-    name: 'Documents',
+    name: 'document',
+    title: 'Document',
     redirection: '/logging'
   },
   {
-    name: 'Calendar',
+    name: 'calendar',
+    title: 'Calendar',
     redirection: '/reports'
   }
 ]

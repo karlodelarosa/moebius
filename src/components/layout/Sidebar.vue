@@ -1,9 +1,13 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import { SIDEBAR_ITEMS } from '@/js/BaseConstants'
 import { useRouter, useRoute } from 'vue-router'
 import Brand from '@/components/layout/atoms/Brand.vue'
 
 const router = useRouter()
+const route = useRoute()
+
+const path = computed(() => route.name)
 
 const redirect = (url: any) => {
   router.push(url)
@@ -24,8 +28,9 @@ const redirect = (url: any) => {
           <a
             href="#"
             class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-teal-400 dark:hover:bg-gray-800 group"
+            :class="{ 'bg-teal-400 hover:bg-teal-500' : path === items.name }"
           >
-            <span class="ml-3 text-teal-900">{{ items.name }}</span>
+            <span class="ml-3 text-teal-900">{{ items.title }}</span>
           </a>
         </li>
       </ul>

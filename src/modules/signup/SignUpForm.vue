@@ -17,7 +17,7 @@ const completeSignUp = () => {
   loading.value = true
   setTimeout(() => {
     loading.value = false
-    router.push('/')
+    router.push('/employee')
   }, 3000)
 }
 </script>
