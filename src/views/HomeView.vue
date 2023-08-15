@@ -20,10 +20,6 @@ const finalData = ref([])
 testFetch().then((data) => {
   finalData.value = data
 })
-
-
 </script>
 
-<template>
-  
-</template>
+<template></template>

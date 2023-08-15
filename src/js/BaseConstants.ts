@@ -4,15 +4,15 @@ export const SIDEBAR_ITEMS = [
     redirection: '/'
   },
   {
-    name: 'Projects',
-    redirection: '/projects'
+    name: 'Employees',
+    redirection: '/employee'
   },
   {
-    name: 'Logging',
+    name: 'Documents',
     redirection: '/logging'
   },
   {
-    name: 'Reports',
+    name: 'Calendar',
     redirection: '/reports'
   }
 ]

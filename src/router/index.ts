@@ -5,6 +5,9 @@ import UserManagement from '../views/UserManagement.vue'
 import OrganizationSetup from '../views/OrganizationSetup.vue'
 import SignUp from '../views/SignUp.vue'
 import SignIn from '../views/SignIn.vue'
+import EmployeeList from '../views/employee/EmployeeList.vue'
+import AddEmployee from '../views/employee/AddEmployee.vue'
+import EmployeeDetails from '../views/employee/EmployeeDetails.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -44,6 +47,24 @@ const router = createRouter({
       name: 'sign_in',
       component: SignIn,
       meta: { layout: false, title: 'Sign In' }
+    },
+    {
+      path: '/employee',
+      name: 'employee',
+      component: EmployeeList,
+      meta: { layout: true, title: 'Employee' }
+    },
+    {
+      path: '/employee/add',
+      name: 'add_employee',
+      component: AddEmployee,
+      meta: { layout: true, title: 'Add Employee' }
+    },
+    {
+      path: '/employee/details',
+      name: 'employee_details',
+      component: EmployeeDetails,
+      meta: { layout: true, title: 'Employee Details' }
     }
   ]
 })

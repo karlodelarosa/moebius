@@ -19,9 +19,7 @@ const completeSignUp = () => {
     loading.value = false
     router.push('/')
   }, 3000)
-  
 }
-
 </script>
 <template>
   <div class="w-2/3">
@@ -329,7 +327,11 @@ const completeSignUp = () => {
     </div>
   </div>
 
-  <Transition appear enter-active-class="animate__animated animate__fadeIn" leave-active-class="animate__animated animate__fadeOut">
+  <Transition
+    appear
+    enter-active-class="animate__animated animate__fadeIn"
+    leave-active-class="animate__animated animate__fadeOut"
+  >
     <SignInLoadingScreen v-if="loading" />
   </Transition>
 </template>
