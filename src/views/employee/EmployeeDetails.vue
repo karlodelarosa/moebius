@@ -14,13 +14,13 @@ const isEditing = ref(false)
 const enableEditing = () => {
   isLocked.value = false
   confirmUnlock.value = false
-  // isFormDisabled.value= false
-  // isEditing.value = true
+  isFormDisabled.value = false
+  isEditing.value = true
 }
 
 const enableEdit = () => {
-  isFormDisabled.value= false
-  isEditing.value = true
+  // isFormDisabled.value= false
+  // isEditing.value = true
 }
 </script>
 
@@ -111,7 +111,7 @@ const enableEdit = () => {
             <PrimaryButton v-if="isEditing" text="Save changes" />
             <button
               @click="confirmUnlock = true"
-              class=" rounded-lg p-2 transition-all duration-100 cursor-pointer"
+              class="rounded-lg p-2 transition-all duration-100 cursor-pointer"
               :class="[
                 { 'bg-red-500 hover:bg-red-600': isLocked },
                 { 'bg-green-500 hover:bg-green-600': !isLocked }
@@ -139,7 +139,27 @@ const enableEdit = () => {
                 </g>
               </svg>
 
-              <svg v-else width="20px" height="20px" class="text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.584 6C15.8124 4.2341 14.0503 3 12 3C9.23858 3 7 5.23858 7 8V10.0288M12 14.5V16.5M7 10.0288C7.47142 10 8.05259 10 8.8 10H15.2C16.8802 10 17.7202 10 18.362 10.327C18.9265 10.6146 19.3854 11.0735 19.673 11.638C20 12.2798 20 13.1198 20 14.8V16.2C20 17.8802 20 18.7202 19.673 19.362C19.3854 19.9265 18.9265 20.3854 18.362 20.673C17.7202 21 16.8802 21 15.2 21H8.8C7.11984 21 6.27976 21 5.63803 20.673C5.07354 20.3854 4.6146 19.9265 4.32698 19.362C4 18.7202 4 17.8802 4 16.2V14.8C4 13.1198 4 12.2798 4.32698 11.638C4.6146 11.0735 5.07354 10.6146 5.63803 10.327C5.99429 10.1455 6.41168 10.0647 7 10.0288Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+              <svg
+                v-else
+                width="20px"
+                height="20px"
+                class="text-white"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    d="M16.584 6C15.8124 4.2341 14.0503 3 12 3C9.23858 3 7 5.23858 7 8V10.0288M12 14.5V16.5M7 10.0288C7.47142 10 8.05259 10 8.8 10H15.2C16.8802 10 17.7202 10 18.362 10.327C18.9265 10.6146 19.3854 11.0735 19.673 11.638C20 12.2798 20 13.1198 20 14.8V16.2C20 17.8802 20 18.7202 19.673 19.362C19.3854 19.9265 18.9265 20.3854 18.362 20.673C17.7202 21 16.8802 21 15.2 21H8.8C7.11984 21 6.27976 21 5.63803 20.673C5.07354 20.3854 4.6146 19.9265 4.32698 19.362C4 18.7202 4 17.8802 4 16.2V14.8C4 13.1198 4 12.2798 4.32698 11.638C4.6146 11.0735 5.07354 10.6146 5.63803 10.327C5.99429 10.1455 6.41168 10.0647 7 10.0288Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </g>
+              </svg>
             </button>
           </div>
         </div>
@@ -181,10 +201,13 @@ const enableEdit = () => {
       </div>
     </section>
 
-    <section class="all-forms"
-      :class="{ 'brightness-50': confirmUnlock }"
-    >
-      <div v-show="isEditing" class="w-fit px-[30px] tracking-widest text-xs font-bold py-1 text-yellow-700 mx-auto rounded-bl-lg rounded-br-lg bg-yellow-200 ">EDITING</div>
+    <section class="all-forms" :class="{ 'brightness-50': confirmUnlock }">
+      <div
+        v-show="isEditing"
+        class="w-fit px-[30px] tracking-widest text-xs font-bold py-1 text-yellow-700 mx-auto rounded-bl-lg rounded-br-lg bg-yellow-200"
+      >
+        EDITING
+      </div>
       <div class="w-[85%] mx-auto pt-[70px]">
         <div class="mb-[100px]">
           <h3 class="font-bold text-sm text-gray-800 uppercase tracking-wide mb-[30px]">
@@ -193,16 +216,16 @@ const enableEdit = () => {
 
           <div class="flex flex-col gap-[15px]">
             <div class="grid grid-cols-2 gap-[15px]">
-              <SelectField label="Gender" :disabled="isFormDisabled"/>
-              <SelectField label="Civil Status" :disabled="isFormDisabled"/>
+              <SelectField label="Gender" :disabled="isFormDisabled" />
+              <SelectField label="Civil Status" :disabled="isFormDisabled" />
             </div>
 
             <InputField label="Address 1" :disabled="isFormDisabled" />
             <InputField label="Address 2" :disabled="isFormDisabled" />
 
             <div class="grid grid-cols-2 gap-[15px]">
-              <SelectField label="Country" :disabled="isFormDisabled"/>
-              <InputField label="Citizenship" :disabled="isFormDisabled"/>
+              <SelectField label="Country" :disabled="isFormDisabled" />
+              <InputField label="Citizenship" :disabled="isFormDisabled" />
             </div>
           </div>
         </div>
@@ -214,15 +237,15 @@ const enableEdit = () => {
 
           <div class="flex flex-col gap-[15px]">
             <div class="grid grid-cols-2 gap-[15px]">
-              <SelectField label="Department" :disabled="isFormDisabled"/>
-              <InputField label="Job Title" :disabled="isFormDisabled"/>
+              <SelectField label="Department" :disabled="isFormDisabled" />
+              <InputField label="Job Title" :disabled="isFormDisabled" />
             </div>
 
-            <InputField label="Date hired" type="date" :disabled="isFormDisabled"/>
+            <InputField label="Date hired" type="date" :disabled="isFormDisabled" />
 
             <div class="grid grid-cols-2 gap-[15px]">
-              <SelectField label="Contract Status" :disabled="isFormDisabled"/>
-              <InputField label="Enrollment Status" :disabled="isFormDisabled"/>
+              <SelectField label="Contract Status" :disabled="isFormDisabled" />
+              <InputField label="Enrollment Status" :disabled="isFormDisabled" />
             </div>
           </div>
         </div>
@@ -234,13 +257,13 @@ const enableEdit = () => {
 
           <div class="flex flex-col gap-[15px]">
             <div class="grid grid-cols-2 gap-[15px]">
-              <InputField label="SSS Number" :disabled="isFormDisabled"/>
-              <InputField label="TIN Number" :disabled="isFormDisabled"/>
+              <InputField label="SSS Number" :disabled="isFormDisabled" />
+              <InputField label="TIN Number" :disabled="isFormDisabled" />
             </div>
 
             <div class="grid grid-cols-2 gap-[15px]">
-              <InputField label="Pag-ibig" :disabled="isFormDisabled"/>
-              <InputField label="Philhealth" :disabled="isFormDisabled"/>
+              <InputField label="Pag-ibig" :disabled="isFormDisabled" />
+              <InputField label="Philhealth" :disabled="isFormDisabled" />
             </div>
           </div>
         </div>
@@ -293,7 +316,10 @@ const enableEdit = () => {
       </div>
     </section>
 
-    <div v-if="confirmUnlock" class="w-[350px] min-h-[100px] bg-white absolute top-[500px] shadow-lg mx-auto left-[35%] p-5 rounded-lg flex flex-col gap-3">
+    <div
+      v-if="confirmUnlock"
+      class="w-[350px] min-h-[100px] bg-white absolute top-[500px] shadow-lg mx-auto left-[35%] p-5 rounded-lg flex flex-col gap-3"
+    >
       <h3>Enable editing?</h3>
       <InputText placeholder="Enter your password" type="password" />
       <PrimaryButton @click="enableEditing()" text="OK" class="ml-auto" />
@@ -315,6 +341,6 @@ const enableEdit = () => {
 }
 
 .employee-details-container > .all-forms {
-  @apply bg-white min-h-[300px] ;
+  @apply bg-white min-h-[300px];
 }
 </style>

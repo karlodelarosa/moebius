@@ -8,22 +8,22 @@ export const SIDEBAR_ITEMS = [
     name: 'employee',
     title: 'Employee',
     redirection: '/employee'
-  },
-  {
-    name: 'document',
-    title: 'Document',
-    redirection: '/document'
-  },
-  {
-    name: 'loggin',
-    title: 'Logging',
-    redirection: '/logging'
-  },
-  {
-    name: 'calendar',
-    title: 'Calendar',
-    redirection: '/reports'
   }
+  // {
+  //   name: 'document',
+  //   title: 'Document',
+  //   redirection: '/document'
+  // },
+  // {
+  //   name: 'loggin',
+  //   title: 'Logging',
+  //   redirection: '/logging'
+  // },
+  // {
+  //   name: 'calendar',
+  //   title: 'Calendar',
+  //   redirection: '/reports'
+  // }
 ]
 
 export const SIGN_UP_STEPS = [

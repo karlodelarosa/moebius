@@ -11,7 +11,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <h1 class="mb-[15px] text-2xl font-medium border-b border-gray-300 pb-1 dark:text-white">
+  <h1 class="mb-[15px] text-xl font-medium border-b border-gray-300 pb-1 dark:text-white">
     {{ props.title }}
   </h1>
 </template>

@@ -21,10 +21,10 @@ const redirect = (url: any) => {
     aria-label="Sidebar"
   >
     <div class="h-full px-3 py-4 overflow-y-auto bg-white dark:bg-gray-900">
-      <Brand brand-name="BRAND NAME" />
+      <Brand brand-name="COMPANY" />
 
       <ul class="space-y-2 font-medium">
-        <li v-for="items in SIDEBAR_ITEMS" @click="redirect(items.redirection)">
+        <li v-for="items in SIDEBAR_ITEMS" @click="redirect(items.redirection)" :key="items">
           <a
             href="#"
             class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-teal-400 dark:hover:bg-gray-800 group"
