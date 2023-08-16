@@ -11,7 +11,7 @@ const toggleDark = useToggle(isDark)
 isDark.value = false
 
 const route = useRoute()
-const pageTitle = computed(() => route.meta.title || 'Default Title')
+const pageTitle = computed(() => route.meta.title || null)
 const hasLayout = computed(() => route.meta.layout)
 </script>
 
@@ -20,7 +20,7 @@ const hasLayout = computed(() => route.meta.layout)
     <BaseLayout>
       <template #main-content>
         <main class="p-2">
-          <PageTitle :title="pageTitle.toString()" />
+          <PageTitle v-if="pageTitle" :title="pageTitle.toString()" />
           <RouterView v-slot="{ Component }">
             <transition appear enter-active-class="animate__animated animate__fadeIn">
               <component :is="Component"></component>

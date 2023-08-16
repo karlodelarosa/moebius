@@ -66,7 +66,7 @@ const router = createRouter({
       path: '/employee/details',
       name: 'employee_details',
       component: EmployeeDetails,
-      meta: { layout: true, title: 'Employee Details' }
+      meta: { layout: true, title: '' }
     },
     {
       path: '/time-tracker',

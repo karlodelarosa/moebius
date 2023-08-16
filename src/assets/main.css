@@ -5,3 +5,7 @@
 body {
   background-color: #efefef;
 }
+
+select:disabled, input:disabled {
+  opacity: 1;
+}
